@@ -8,7 +8,7 @@ import { Footer } from "@/components/store/Footer";
 export const Route = createFileRoute("/order-confirmation")({
   head: () => ({
     meta: [
-      { title: "অর্ডার নিশ্চিত হয়েছে — Techno" },
+      { title: "অর্ডার নিশ্চিত হয়েছে — Dhaka Gadget Grove" },
       { name: "robots", content: "noindex" },
     ],
   }),

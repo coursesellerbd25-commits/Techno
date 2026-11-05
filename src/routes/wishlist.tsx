@@ -10,9 +10,9 @@ import type { ProductCard as ProductCardData } from "@/lib/catalog.functions";
 export const Route = createFileRoute("/wishlist")({
   head: () => ({
     meta: [
-      { title: "পছন্দের তালিকা — Techno" },
+      { title: "পছন্দের তালিকা — Dhaka Gadget Grove" },
       { name: "description", content: "আপনার সংরক্ষিত পছন্দের পণ্যের তালিকা।" },
-      { property: "og:title", content: "পছন্দের তালিকা — Techno" },
+      { property: "og:title", content: "পছন্দের তালিকা — Dhaka Gadget Grove" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

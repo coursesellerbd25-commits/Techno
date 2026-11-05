@@ -86,14 +86,14 @@ export const Route = createFileRoute("/products")({
     meta: [
       {
         title: match.loaderDeps?.category
-          ? `${match.loaderDeps.category.replace(/-/g, " ")} — Techno`
-          : "সকল পণ্য — Techno",
+          ? `${match.loaderDeps.category.replace(/-/g, " ")} — Dhaka Gadget Grove`
+          : "সকল পণ্য — Dhaka Gadget Grove",
       },
       {
         name: "description",
         content: "ল্যাপটপ, হেডফোন, গেমিং অ্যাক্সেসরিজসহ সকল টেক পণ্য — ফিল্টার ও বাছাই করে সহজে খুঁজুন।",
       },
-      { property: "og:title", content: "সকল পণ্য — Techno" },
+      { property: "og:title", content: "সকল পণ্য — Dhaka Gadget Grove" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/15 pt-6 text-center text-xs text-white/60">
-          © {new Date().getFullYear()} Techno — সর্বস্বত্ব সংরক্ষিত
+          © {new Date().getFullYear()} Dhaka Gadget Grove — সর্বস্বত্ব সংরক্ষিত
         </div>
       </div>
     </footer>

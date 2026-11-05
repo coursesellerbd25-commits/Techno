@@ -8,11 +8,11 @@ import { toast } from "sonner";
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2" aria-label="Techno হোম">
+    <Link to="/" className="flex items-center gap-2" aria-label="Dhaka Gadget Grove হোম">
       <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary font-bold text-primary-foreground">
         T
       </span>
-      <span className="text-xl font-bold tracking-tight text-white">Techno</span>
+      <span className="text-xl font-bold tracking-tight text-white">Dhaka Gadget Grove</span>
     </Link>
   );
 }

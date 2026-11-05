@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Techno design system.
+ * Dhaka Gadget Grove design system.
  * Brand palette (exact, from the brand guidelines):
  *   Deep Teal      #003135  oklch(0.285 0.049 203.5)
  *   Dark Teal      #024950  oklch(0.371 0.063 205.9)
@@ -41,7 +41,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  /* Techno brand tokens */
+  /* Dhaka Gadget Grove brand tokens */
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
   --color-brand-deep: var(--brand-deep);

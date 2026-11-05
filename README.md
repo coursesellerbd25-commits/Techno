@@ -1077,25 +1077,33 @@ The website should encourage purchases through convenience, relevant product dis
 
 Start by inspecting the project, proposing the architecture and implementation plan, and then building the website in manageable, testable stages.
 
-This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://dhaka-gadget-grove.lovable.app
+## Independent deployment
 
-## Build with Lovable
+The storefront deploys from the repository root. The separate admin SPA deploys from `/admin` as a second Vercel project. Both connect to the same Supabase project. See `admin/README.md` for owner-role setup and `supabase/migrations/0002_admin_dashboard_access.sql` for required RLS changes. Never commit `.env` files or expose the service-role key to browser code.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/7f34bc19-1020-4998-a6d0-bec15107f5b1).
+## Vercel deployment guide
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+### 1. Storefront project
+- Import this repository into Vercel.
+- Set the Root Directory to `.` (repository root).
+- Framework: **TanStack Start**.
+- Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+- Add server-only `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, and `SUPABASE_SERVICE_ROLE_KEY`.
+- Never prefix the service-role key with `VITE_`.
 
-## Development
+### 2. Admin project
+- Create a second Vercel project from the same Git repository.
+- Set Root Directory to `admin`.
+- Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
+- Assign `admin.dhakagadgetgrove.com` to this Vercel project and follow Vercel's DNS instructions.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### 3. Supabase setup
+- Apply `supabase/migrations/0002_admin_dashboard_access.sql` in the Supabase SQL Editor after confirming the base commerce tables and `has_role` function exist.
+- Create the owner account in Supabase Authentication.
+- Follow `admin/README.md` to assign the `admin` role.
+- Add both deployed domains to Supabase Authentication's allowed redirect URLs.
+- Configure Google as an OAuth provider in Supabase if customers should be able to use Google sign-in.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+### Environment files
+Copy `.env.example` to `.env` for local storefront development and `admin/.env.example` to `admin/.env.local` for local admin development. The included examples contain placeholders only.

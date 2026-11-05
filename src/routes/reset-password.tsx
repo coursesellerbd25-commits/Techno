@@ -9,7 +9,7 @@ import { Footer } from "@/components/store/Footer";
 export const Route = createFileRoute("/reset-password")({
   head: () => ({
     meta: [
-      { title: "নতুন পাসওয়ার্ড সেট করুন — Techno" },
+      { title: "নতুন পাসওয়ার্ড সেট করুন — Dhaka Gadget Grove" },
       { name: "robots", content: "noindex" },
     ],
   }),

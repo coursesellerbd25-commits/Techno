@@ -12,9 +12,9 @@ import { Footer } from "@/components/store/Footer";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "অর্ডার সম্পন্ন করুন — Techno" },
+      { title: "অর্ডার সম্পন্ন করুন — Dhaka Gadget Grove" },
       { name: "description", content: "নিবন্ধন ছাড়াই, মাত্র কয়েক ধাপে আপনার অর্ডার সম্পন্ন করুন।" },
-      { property: "og:title", content: "অর্ডার সম্পন্ন করুন — Techno" },
+      { property: "og:title", content: "অর্ডার সম্পন্ন করুন — Dhaka Gadget Grove" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

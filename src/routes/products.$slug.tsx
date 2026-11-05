@@ -26,17 +26,17 @@ export const Route = createFileRoute("/products/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.name_bn ?? "পণ্য"} — Techno` },
+      { title: `${loaderData?.name_bn ?? "পণ্য"} — Dhaka Gadget Grove` },
       {
         name: "description",
         content:
           loaderData?.short_desc_bn ??
-          `${loaderData?.name_bn ?? "পণ্য"} কিনুন Techno থেকে সাশ্রয়ী দামে। দেশজুড়ে ডেলিভারি ও ক্যাশ অন ডেলিভারি সুবিধা।`,
+          `${loaderData?.name_bn ?? "পণ্য"} কিনুন Dhaka Gadget Grove থেকে সাশ্রয়ী দামে। দেশজুড়ে ডেলিভারি ও ক্যাশ অন ডেলিভারি সুবিধা।`,
       },
-      { property: "og:title", content: `${loaderData?.name_bn ?? "পণ্য"} — Techno` },
+      { property: "og:title", content: `${loaderData?.name_bn ?? "পণ্য"} — Dhaka Gadget Grove` },
       {
         property: "og:description",
-        content: loaderData?.short_desc_bn ?? loaderData?.name_bn ?? "Techno",
+        content: loaderData?.short_desc_bn ?? loaderData?.name_bn ?? "Dhaka Gadget Grove",
       },
       { property: "og:type", content: "product" },
       { name: "twitter:card", content: "summary_large_image" },

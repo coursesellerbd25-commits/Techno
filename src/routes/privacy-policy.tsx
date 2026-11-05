@@ -5,9 +5,9 @@ import { PRIVACY_POLICY } from "@/lib/policies";
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "প্রাইভেসি পলিসি — Techno" },
-      { name: "description", content: "Techno কীভাবে আপনার তথ্য সংগ্রহ ও ব্যবহার করে।" },
-      { property: "og:title", content: "প্রাইভেসি পলিসি — Techno" },
+      { title: "প্রাইভেসি পলিসি — Dhaka Gadget Grove" },
+      { name: "description", content: "Dhaka Gadget Grove কীভাবে আপনার তথ্য সংগ্রহ ও ব্যবহার করে।" },
+      { property: "og:title", content: "প্রাইভেসি পলিসি — Dhaka Gadget Grove" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

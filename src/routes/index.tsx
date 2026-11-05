@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Techno — ল্যাপটপ, গ্যাজেট ও টেক অ্যাক্সেসরিজ অনলাইন শপ বাংলাদেশ",
+        title: "Dhaka Gadget Grove — ল্যাপটপ, গ্যাজেট ও টেক অ্যাক্সেসরিজ অনলাইন শপ বাংলাদেশ",
       },
       {
         name: "description",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Techno — আপনার প্রযুক্তির সঙ্গী, এখন আরও হাতের নাগালে",
+        content: "Dhaka Gadget Grove — আপনার প্রযুক্তির সঙ্গী, এখন আরও হাতের নাগালে",
       },
       {
         property: "og:description",

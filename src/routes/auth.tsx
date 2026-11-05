@@ -1,9 +1,8 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable";
 import { AnnouncementBar } from "@/components/store/AnnouncementBar";
 import { Header } from "@/components/store/Header";
 import { Footer } from "@/components/store/Footer";
@@ -20,7 +19,7 @@ export const Route = createFileRoute("/auth")({
   },
   head: () => ({
     meta: [
-      { title: "লগইন / নিবন্ধন — Techno" },
+      { title: "লগইন / নিবন্ধন — Dhaka Gadget Grove" },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -43,6 +42,14 @@ function AuthPage() {
   const [awaitingConfirm, setAwaitingConfirm] = useState(false);
 
   const dest = safeRedirect(search.redirect);
+
+  useEffect(() => {
+    let active = true;
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (active && session) navigate({ to: dest });
+    });
+    return () => { active = false; };
+  }, [dest, navigate]);
   const inputClass =
     "w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary";
 
@@ -89,13 +96,15 @@ function AuthPage() {
     }
   }
 
-  async function social(provider: "google" | "lovable") {
+  async function social() {
     try {
       sessionStorage.setItem("techno_auth_redirect", dest);
-      const result = await lovable.auth.signInWithOAuth(provider, {
-        redirect_uri: window.location.origin,
+      const redirectTo = `${window.location.origin}/auth?redirect=${encodeURIComponent(dest)}`;
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo },
       });
-      if (result.error) toast.error("সাইন-ইন করা যায়নি: " + result.error.message);
+      if (error) toast.error("সাইন-ইন করা যায়নি: " + error.message);
     } catch {
       toast.error("সাইন-ইন করা যায়নি, আবার চেষ্টা করুন।");
     }
@@ -182,17 +191,10 @@ function AuthPage() {
           <div className="grid gap-2">
             <button
               type="button"
-              onClick={() => social("google")}
+              onClick={social}
               className="rounded-md border px-4 py-2.5 text-sm font-medium hover:bg-accent"
             >
               Google দিয়ে চালিয়ে যান
-            </button>
-            <button
-              type="button"
-              onClick={() => social("lovable")}
-              className="rounded-md border px-4 py-2.5 text-sm font-medium hover:bg-accent"
-            >
-              Lovable দিয়ে চালিয়ে যান
             </button>
           </div>
         </div>

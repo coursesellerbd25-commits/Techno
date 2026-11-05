@@ -11,7 +11,7 @@ import { Footer } from "@/components/store/Footer";
 export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
-      { title: "আমার অ্যাকাউন্ট — Techno" },
+      { title: "আমার অ্যাকাউন্ট — Dhaka Gadget Grove" },
       { name: "robots", content: "noindex" },
     ],
   }),

@@ -11,9 +11,9 @@ import { Footer } from "@/components/store/Footer";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "শপিং কার্ট — Techno" },
+      { title: "শপিং কার্ট — Dhaka Gadget Grove" },
       { name: "description", content: "আপনার শপিং কার্টে সংরক্ষিত পণ্যগুলো দেখুন ও অর্ডার করুন।" },
-      { property: "og:title", content: "শপিং কার্ট — Techno" },
+      { property: "og:title", content: "শপিং কার্ট — Dhaka Gadget Grove" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
